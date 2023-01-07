@@ -1,4 +1,19 @@
-pub enum List {
+pub struct List {
+    head: Link,
+}
+
+struct Node {
+    elem: i32,
+    next: Link,
+}
+
+enum Link {
     Empty,
-    Elem(i32, Box<List>),
+    More(Box<Node>),
+}
+
+impl List {
+    pub fn new() -> Self {
+        List { head: Link::Empty }
+    }
 }
